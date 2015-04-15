@@ -112,6 +112,7 @@ int event_poll( int event_num ) {
 	int i;
 
 	while( SDL_PollEvent( &sdl_event ) ) {
+		sdl_focus();
 		event_num = EVENT_NONE;
 		if( sdl_event.type == SDL_QUIT ) {
 			event_num = EVENT_QUIT;

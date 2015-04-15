@@ -80,6 +80,14 @@ int sdl_init( void ) {
 	return 0;
 }
 
+void sdl_focus( void ) {
+    SDL_Window *windowTest = SDL_GetKeyboardFocus();
+    if ( windowTest == window )
+        printf("\nWindow focused!!!\n");
+    else
+        printf("\nWindow NOT focused.\n");
+}
+
 void sdl_free( void ) {
 	SDL_FreeSurface( screen );
 	screen = NULL;
